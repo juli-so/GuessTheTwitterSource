@@ -21,6 +21,7 @@ p{
 .container{
 	border-top:7px solid #27ae60;
 	margin:0;
+	height: 93%;
 }
 
 .tweet{
@@ -31,6 +32,19 @@ p{
 	margin-left:45px;
 	height:85px;
 	font-weight:500;
+}
+
+.bottom{
+	bottom: 0;
+	position: relative;
+	margin-bottom: 0;
+	font-size: 15px;
+	color: #4E4A4A;
+	font-weight:300;
+}
+
+.bottom a{
+	color: #4E4A4A;
 }
 
 
