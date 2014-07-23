@@ -1,0 +1,76 @@
+<html>
+<head>
+<link href="static/css/style.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</head>
+<body>
+<div class="container" id="container">
+  	<div class="result"><p class="streak">STREAK OF</p><p id="result"></p>
+</div>
+<div class="tweet">
+<a style="text-decoration:none;"  target="_blank" id="tweet"><img src="static/images/twitter.png" width="100px"></a>
+</div>
+	<div class="random">
+        <p>{{ randomt }}</p>
+        <br>
+     <div class="split">
+    <a href onclick="techcrunch()"><img src="static/images/tcreg.png" style="height:70px;"></a>
+    <a href onclick="hackernews()"><img src="static/images/hnreg.png" style="height:70px;"></a>
+    </div>
+    <div class="split">
+    <a href onclick="theonion()"><img src="static/images/toreg.png" style="height:70px;"></a>
+    <a href onclick="producthunt()"><img src="static/images/phreg.png" style="height:70px;"></a>
+    </div>
+    </div>
+    </div>
+<script type="text/javascript">
+document.getElementById("tweet").href = "http://twitter.com/share?text=Try%20and%20beat%20my%20streak%20of%20" +  localStorage.correct + "%20on&url=http%3A%2F%2Fguessthetwittersource.heroku.com%2F";
+
+if(typeof(Storage) !== "undefined"){
+ document.getElementById("result").innerHTML =  localStorage.correct;
+}
+ else{ localStorage.correct = 0;
+ }
+ if (localStorage.correct == 0){
+$("#container").css("border-top", "solid 7px #e74c3c");
+
+ }
+function techcrunch(data) {
+    if ({{ data|safe }} == "techcrunch"){
+    	localStorage.correct = Number(localStorage.correct)+1;
+    }
+    else{
+    	localStorage.correct = 0;
+    }
+}
+function hackernews(data) {
+    if ({{ data|safe }} == "hacker news"){
+    	localStorage.correct = Number(localStorage.correct)+1;
+    }
+    else{
+    	localStorage.correct = 0;
+    }
+}
+function theonion(data) {
+    if ({{ data|safe }} == "the onion"){
+    	localStorage.correct = Number(localStorage.correct)+1;
+    }
+    else{
+    	localStorage.correct = 0;
+    }
+}
+function producthunt(data) {
+    if ({{ data|safe }} == "product hunt"){
+    	localStorage.correct = Number(localStorage.correct)+1;
+    }
+    else{
+    	localStorage.correct = 0;
+    }
+}
+</script>
+</body>
+</html>

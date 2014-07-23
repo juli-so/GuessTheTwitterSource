@@ -1,0 +1,10 @@
+#!/Users/Coding/Downloads/twiscrap-8acad77ab61c541152c2cfffbbd34ec92d6f92b8/samples/venv/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'gunicorn==19.0.0','console_scripts','gunicorn_django'
+__requires__ = 'gunicorn==19.0.0'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('gunicorn==19.0.0', 'console_scripts', 'gunicorn_django')()
+    )
