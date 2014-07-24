@@ -23,6 +23,3 @@ def template(randomt=randomt, answer=answer):
     	answer = "hacker news"
     data = answer
     return render_template('index.html', randomt=randomt, answer=answer, data=json.dumps(data))
-
-if __name__ == '__main__':
-    app.run(debug=True)
