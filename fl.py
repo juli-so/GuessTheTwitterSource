@@ -10,10 +10,6 @@ data = ""
 
 @app.route('/')
 def template(randomt=randomt, answer=answer):
-    arraytc = [tweet1tc, tweet2tc, tweet3tc, tweet4tc, tweet5tc, tweet6tc, tweet7tc]
-    arrayph = [tweet1ph, tweet2ph, tweet3ph, tweet4ph, tweet5ph, tweet6ph, tweet7ph]
-    arrayto = [tweet1to, tweet2to, tweet3to, tweet4to, tweet5to, tweet6to, tweet7to]
-    arrayhn = [tweet1hn, tweet2hn, tweet3hn, tweet4hn, tweet5hn, tweet6hn, tweet7hn]
     arrays = arraytc + arrayph + arrayto + arrayhn
     randomt = random.choice(arrays)
     randomt = HTMLParser.HTMLParser().unescape(randomt)
@@ -27,3 +23,6 @@ def template(randomt=randomt, answer=answer):
     	answer = "hacker news"
     data = answer
     return render_template('index.html', randomt=randomt, answer=answer, data=json.dumps(data))
+
+if __name__ == '__main__':
+    app.run(debug=True)
