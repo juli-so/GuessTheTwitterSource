@@ -9,7 +9,7 @@ randomt = ""
 
 # Requires Authentication as of Twitter API v1.1
 twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
-techcrunch = twitter.get_user_timeline(screen_name='techcrunch', include_rts=None, count=7)
+techcrunch = twitter.get_user_timeline(screen_name='techcrunch', count=7)
 for idx, tweet in enumerate(techcrunch):
     if idx == 0:
     	tweet1tc = tweet['text'] + "\n"
@@ -43,7 +43,7 @@ for idx, tweet in enumerate(techcrunch):
 
     #print tweet['text'] + "\n"
 
-producthunt = twitter.get_user_timeline(screen_name='producthunt', include_rts=None, count=7)
+producthunt = twitter.get_user_timeline(screen_name='producthunt', count=7)
 for idx, tweet in enumerate(producthunt):
     if idx == 0:
     	tweet1ph = tweet['text'] + "\n"
@@ -75,7 +75,7 @@ for idx, tweet in enumerate(producthunt):
     	tweet7ph = tweet7ph[:p]
 
 
-onion = twitter.get_user_timeline(screen_name='theonion', include_rts=None, count=7)
+onion = twitter.get_user_timeline(screen_name='theonion', count=7)
 for idx, tweet in enumerate(onion):
     if idx == 0:
         tweet1to = tweet['text'] + "\n"
@@ -106,33 +106,40 @@ for idx, tweet in enumerate(onion):
     	p = tweet7to.find("htt")
     	tweet7to = tweet7to[:p]
 
-hackernews = twitter.get_user_timeline(screen_name='newsycombinator', include_rts=None, count=7)
+hackernews = twitter.get_user_timeline(screen_name='newsycombinator', count=7)
 for idx, tweet in enumerate(hackernews):
     if idx == 0:
         tweet1hn = tweet['text'] + "\n"
         p = tweet1hn.find("htt")
-        tweet1hn = tweet1hn[:p]
+        x = tweet1hn.find("Show HN:")
+        tweet1hn = tweet1hn[x:p]
     if idx == 1:
         tweet2hn = tweet['text'] + "\n"
         p = tweet2hn.find("htt")
-        tweet2hn = tweet2hn[:p]
+        x = tweet1hn.find("Show HN:")
+        tweet2hn = tweet2hn[x:p]
     if idx == 2:
         tweet3hn = tweet['text'] + "\n"
         p = tweet3hn.find("htt")
-        tweet3hn = tweet3hn[:p]
+        x = tweet1hn.find("Show HN:")
+        tweet3hn = tweet3hn[x:p]
     if idx == 3:
         tweet4hn = tweet['text'] + "\n"
         p = tweet4hn.find("htt")
-        tweet4hn = tweet4hn[:p]
+        x = tweet1hn.find("Show HN:")
+        tweet4hn = tweet4hn[x:p]
     if idx == 4:
     	tweet5hn = tweet['text'] + "\n"
     	p = tweet5hn.find("htt")
-    	tweet5hn = tweet5hn[:p]
+    	x = tweet1hn.find("Show HN:")
+    	tweet5hn = tweet5hn[x:p]
     if idx == 5:
     	tweet6hn = tweet['text'] + "\n"
     	p = tweet6hn.find("htt")
-    	tweet6hn = tweet6hn[:p]
+    	x = tweet1hn.find("Show HN:")
+    	tweet6hn = tweet6hn[x:p]
     if idx == 6:
     	tweet7hn = tweet['text'] + "\n"
     	p = tweet7hn.find("htt")
-    	tweet7hn = tweet7hn[:p]
+    	x = tweet1hn.find("Show HN:")
+    	tweet7hn = tweet7hn[x:p]
