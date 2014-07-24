@@ -39,8 +39,6 @@ for idx, tweet in enumerate(techcrunch):
     	tweet7tc = tweet['text'] + "\n"
     	p = tweet7tc.find("htt")
     	tweet7tc = tweet7tc[:p]
-
-
     #print tweet['text'] + "\n"
 
 producthunt = twitter.get_user_timeline(screen_name='producthunt', count=7)
@@ -111,35 +109,28 @@ for idx, tweet in enumerate(hackernews):
     if idx == 0:
         tweet1hn = tweet['text'] + "\n"
         p = tweet1hn.find("htt")
-        x = tweet1hn.find("Show HN:")
-        tweet1hn = tweet1hn[x:p]
+        tweet1hn = tweet1hn[:p]
     if idx == 1:
         tweet2hn = tweet['text'] + "\n"
         p = tweet2hn.find("htt")
-        x = tweet1hn.find("Show HN:")
-        tweet2hn = tweet2hn[x:p]
+        tweet2hn = tweet2hn[:p]
     if idx == 2:
         tweet3hn = tweet['text'] + "\n"
         p = tweet3hn.find("htt")
-        x = tweet1hn.find("Show HN:")
-        tweet3hn = tweet3hn[x:p]
+        tweet3hn = tweet3hn[:p]
     if idx == 3:
         tweet4hn = tweet['text'] + "\n"
         p = tweet4hn.find("htt")
-        x = tweet1hn.find("Show HN:")
-        tweet4hn = tweet4hn[x:p]
+        tweet4hn = tweet4hn[:p]
     if idx == 4:
     	tweet5hn = tweet['text'] + "\n"
     	p = tweet5hn.find("htt")
-    	x = tweet1hn.find("Show HN:")
-    	tweet5hn = tweet5hn[x:p]
+    	tweet5hn = tweet5hn[:p]
     if idx == 5:
     	tweet6hn = tweet['text'] + "\n"
     	p = tweet6hn.find("htt")
-    	x = tweet1hn.find("Show HN:")
-    	tweet6hn = tweet6hn[x:p]
+    	tweet6hn = tweet6hn[:p]
     if idx == 6:
     	tweet7hn = tweet['text'] + "\n"
     	p = tweet7hn.find("htt")
-    	x = tweet1hn.find("Show HN:")
-    	tweet7hn = tweet7hn[x:p]
+    	tweet7hn = tweet7hn[:p]
