@@ -23,10 +23,10 @@
   	<div class="result"><p class="streak">STREAK OF</p><p id="result"></p>
 </div>
 <div class="tweet">
-<a style="text-decoration:none;"  target="_blank" id="tweet"><img src="static/images/twitter.png" width="100px"></a>
+<a style="text-decoration:none;" target="_blank" id="tweet"><img src="static/images/twitter.png" width="100px"></a>
 </div>
 	<div class="random">
-        <p>{{ randomt }}</p>
+        <div class="linkeddiv"><p><a class="linked" id="linked" target="_blank">{{ randomt }}</a></p></div>
         <br>
      <div class="split">
     <a href onclick="techcrunch()"><img src="static/images/tcreg.png" style="height:70px;"></a>
@@ -42,6 +42,11 @@
 <script type="text/javascript">
 document.getElementById("tweet").href = "http://twitter.com/share?text=Try%20and%20beat%20my%20streak%20of%20" +  localStorage.correct + "%20on&url=http%3A%2F%2Fguessthetwittersource.heroku.com%2F";
 
+	
+$( document ).ready(function() {
+    document.getElementById("linked").href = {{ url|safe }};
+});
+
 if(localStorage.correct == undefined){
 	localStorage.correct = 0;
 }
@@ -54,6 +59,7 @@ if(typeof(Storage) !== "undefined"){
  }
  if (localStorage.correct == 0){
 $("#container").css("border-top", "solid 7px #e74c3c");
+$("#linked").css("border-bottom", "solid 2px #e74c3c");
 
  }
 function techcrunch(data) {

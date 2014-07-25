@@ -11,8 +11,13 @@ data = ""
 @app.route('/')
 def template(randomt=randomt, answer=answer):
     arrays = arraytc + arrayph + arrayto + arrayhn
+    arraysurl = arrayurltc + arrayurlph + arrayurlto + arrayurlhn
     randomt = random.choice(arrays)
+    index = arrays.index(randomt)
+    url = arraysurl[index]
     randomt = HTMLParser.HTMLParser().unescape(randomt)
+    url = '"' + url + '"'
+    url = HTMLParser.HTMLParser().unescape(url)
     if randomt in arraytc:
     	answer = "techcrunch"
     if randomt in arrayph:
@@ -22,4 +27,4 @@ def template(randomt=randomt, answer=answer):
     if randomt in arrayhn:
     	answer = "hacker news"
     data = answer
-    return render_template('index.html', randomt=randomt, answer=answer, data=json.dumps(data))
+    return render_template('index.html', randomt=randomt, answer=answer, data=json.dumps(data), url=url)
