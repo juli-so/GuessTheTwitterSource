@@ -39,23 +39,21 @@
     </div>
     </div>
         <p class="bottom">Concept by <a href="https://twitter.com/semil/status/491451396424990721" target="_blank">Semil Shah</a>, execution by <a href="mailto:ethan@createhs.com" target="_blank">Ethan Eirinberg</a></p>
-<script type="text/javascript">
-document.getElementById("tweet").href = "http://twitter.com/share?text=Try%20and%20beat%20my%20streak%20of%20" +  localStorage.correct + "%20on&url=http%3A%2F%2Fguessthetwittersource.heroku.com%2F";
-
-	
-$( document ).ready(function() {
+  <script type="text/javascript">
+  $( document ).ready(function() {
     document.getElementById("linked").href = {{ url|safe }};
+    
 });
 
 if(localStorage.correct == undefined){
-	localStorage.correct = 0;
+  localStorage.correct = 0;
 }
 
 if(typeof(Storage) !== "undefined"){
  document.getElementById("result").innerHTML =  localStorage.correct;
 }
  else{ 
- 	localStorage.correct = 0;
+  localStorage.correct = 0;
  }
  if (localStorage.correct == 0){
 $("#container").css("border-top", "solid 7px #e74c3c");
@@ -63,36 +61,36 @@ $("#container").css("border-top", "solid 7px #e74c3c");
  }
 function techcrunch(data) {
     if ({{ data|safe }} == "techcrunch"){
-    	localStorage.correct = Number(localStorage.correct)+1;
+      localStorage.correct = Number(localStorage.correct)+1;
     }
     else{
-    	localStorage.correct = 0;
+      localStorage.correct = 0;
     }
 }
 function hackernews(data) {
     if ({{ data|safe }} == "hacker news"){
-    	localStorage.correct = Number(localStorage.correct)+1;
+      localStorage.correct = Number(localStorage.correct)+1;
     }
     else{
-    	localStorage.correct = 0;
+      localStorage.correct = 0;
     }
 }
 function theonion(data) {
     if ({{ data|safe }} == "the onion"){
-    	localStorage.correct = Number(localStorage.correct)+1;
+      localStorage.correct = Number(localStorage.correct)+1;
     }
     else{
-    	localStorage.correct = 0;
+      localStorage.correct = 0;
     }
 }
 function producthunt(data) {
     if ({{ data|safe }} == "product hunt"){
-    	localStorage.correct = Number(localStorage.correct)+1;
+      localStorage.correct = Number(localStorage.correct)+1;
     }
     else{
-    	localStorage.correct = 0;
+      localStorage.correct = 0;
     }
 }
-</script>
+  </script>
 </body>
 </html>

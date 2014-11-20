@@ -19,12 +19,15 @@ def template(randomt=randomt, answer=answer):
     url = '"' + url + '"'
     url = HTMLParser.HTMLParser().unescape(url)
     if randomt in arraytc:
-    	answer = "techcrunch"
+        answer = "techcrunch"
     if randomt in arrayph:
-    	answer = "product hunt"
+        answer = "product hunt"
     if randomt in arrayto:
-    	answer = "the onion"
+        answer = "the onion"
     if randomt in arrayhn:
-    	answer = "hacker news"
+        answer = "hacker news"
     data = answer
     return render_template('index.html', randomt=randomt, answer=answer, data=json.dumps(data), url=url)
+
+if __name__ == "__main__":
+    app.run(debug=True)
