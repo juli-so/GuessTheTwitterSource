@@ -5,7 +5,7 @@ The Idea
 -------
 3 hour project that I put together after @semil tweeted "Fun app idea: Display real tech headline pulled from Twitter & hide   source. User guesses: Hacker News, The Onion, TechCrunch, Product Hunt?" (https://twitter.com/semil/status/491451396424990721)
  
-**Live Version:** (guessthetwittersource.heroku.com)[guessthetwittersource.heroku.com]
+**Live Version:** http://guessthetwittersource.heroku.com
  
 How it works
 -------
