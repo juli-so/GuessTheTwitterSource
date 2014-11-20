@@ -21,7 +21,6 @@ To run locally, create a config.py file with your keys:
 (APP_KEY = "", APP_SECRET = "", OAUTH_TOKEN = "", OAUTH_TOKEN_SECRET = "") and then run your "fl.py" file
  
 Improvements Coming
--------
-Cleaner Code
-
-Select Twitter Accounts on User End
+ -------
+- Cleaner Code
+- Select Twitter Accounts on User End
